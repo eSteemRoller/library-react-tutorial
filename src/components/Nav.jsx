@@ -1,10 +1,8 @@
 
-import React from 'react';
+import LibraryLogo from '../assets/Library.svg';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
-import LibraryLogo from '../assets/Library.svg';
-
 
 
 export default function Nav() {
