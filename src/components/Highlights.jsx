@@ -1,7 +1,7 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faBookOpen, faTags } from '@fortawesome/free-solid-svg-icons';
-import Highlight from './ui/Highlights';
+import Highlight from './ui/Highlight';
 
 export default function Highlights() {
   return (

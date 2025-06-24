@@ -285,6 +285,7 @@ header {
 .no-cursor {
   cursor: not-allowed;
 }
+
 /* 
 
 HIGHLIGHTS 
@@ -358,11 +359,11 @@ HIGHLIGHTS
 
 /* 
 
-FEATURES 
+FEATURED
 
 */
 
-#features {
+#featured {
   padding-top: 8vw;
   background-color: rgba(115, 66, 214, 0.1);
 }
