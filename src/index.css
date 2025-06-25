@@ -273,7 +273,7 @@ header {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 72px;
 }
 
 .row__column {
@@ -371,7 +371,7 @@ FEATURED
 .books {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -24px;
+  margin: 0 auto;
 }
 
 .book {
@@ -806,6 +806,11 @@ select {
 
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
+  
+  .row {
+    padding: 0 112px;
+  }
+
   .btn__menu {
     display: block;
   }
@@ -825,7 +830,13 @@ select {
   .cart__book--img {
     display: none;
   }
+
   .cart__book--info {
     padding-left: 0;
   }
+
+    .book {
+    width: 100%;
+  }
+
 }
