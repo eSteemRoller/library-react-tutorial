@@ -1,5 +1,5 @@
 
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
@@ -8,31 +8,34 @@ export default function Book({ book }) {
     <div className="book">
         <a href='/'>
             <figure className="book__img--wrapper">
-                <img src={book.url} alt="" className='book__img' />
+                <img src={book?.url} alt={book?.title} className='book__img' />
             </figure>
         </a>
         <div className="book__title">
             <a href='/' className='book__title--link'>
-                {book.title}
+                {book?.title}
             </a>
         </div>
         <div className="book__ratings">
             {
-                new Array(5).fill(0).map((_, index) => <FontAwesomeIcon icon={faStar} key={index}/>)
+                new Array(Math.floor(book.rating)).fill(0).map((_, index) => <FontAwesomeIcon icon={faStar} key={index}/>)
+            }
+            {
+                !Number.isInteger(book.rating) && <FontAwesomeIcon icon={faStarHalfAlt} />
             }
         </div>
         <div className="book__price">
-            {book.salePrice ? (
+            {book?.salePrice ? (
                     <>
-                        <span className="book__price--normal">${book.originalPrice}</span>
-                        ${book.salePrice.toFixed(2)}
+                        <span className="book__price--normal">${book?.originalPrice}</span>
+                        ${book?.salePrice.toFixed(2)}
                     </>
                 ) : 
                 (
-                    <>${book.originalPrice.toFixed(2)}</>
+                    <>${book?.originalPrice.toFixed(2)}</>
                 )
             }
         </div>
     </div>
-  )
+  );
 }

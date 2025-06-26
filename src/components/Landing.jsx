@@ -10,8 +10,8 @@ export default function Landing() {
                 <div className="header__description">
                     <h1>Australia's Most Awarded Online Library Platform</h1>
                     <h2>Find Your Dream Book With <span className="purple">Library</span></h2>
-                    <Link to="#features">
-                        <button className="btn">Browse Books</button>
+                    <Link to="/books">
+                        <button className="btn">Browse All Books</button>
                     </Link>
                 </div>
                 <figure className="header__img--wrapper">
