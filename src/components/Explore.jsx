@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Explore() {
   return (
@@ -9,9 +10,9 @@ export default function Explore() {
                 <h2>
                     Explore More <span className="purple">Books</span>
                 </h2>
-                <a href="/books" className="href">
+                <Link to="/books" className="href">
                     <button className='btn'>Explore All Books</button>
-                </a>
+                </Link>
             </div>
         </div>
     </section>
