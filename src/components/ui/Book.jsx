@@ -1,8 +1,7 @@
 
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
 import { Link } from 'react-router-dom';
+import Rating from './Rating';
+import Price from './Price';
 
 
 export default function Book({ book }) {
@@ -18,26 +17,8 @@ export default function Book({ book }) {
                 {book?.title}
             </Link>
         </div>
-        <div className="book__ratings">
-            {
-                new Array(Math.floor(book.rating)).fill(0).map((_, index) => <FontAwesomeIcon icon={faStar} key={index}/>)
-            }
-            {
-                !Number.isInteger(book.rating) && <FontAwesomeIcon icon={faStarHalfAlt} />
-            }
-        </div>
-        <div className="book__price">
-            {book?.salePrice ? (
-                    <>
-                        <span className="book__price--normal">${book?.originalPrice}</span>
-                        ${book?.salePrice.toFixed(2)}
-                    </>
-                ) : 
-                (
-                    <>${book?.originalPrice.toFixed(2)}</>
-                )
-            }
-        </div>
+        <Rating rating={book?.rating} />
+        <Price originalPrice={book?.originalPrice} salePrice={book?.salePrice} />
     </div>
   );
 }
