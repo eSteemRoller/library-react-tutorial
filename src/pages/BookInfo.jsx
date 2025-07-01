@@ -25,15 +25,15 @@ export default function BookInfo({ books, addToCart }) {
                     </div>
                     <div className="book__selected">
                         <figure className="book__selected--figure">
-                            <img src={book?.url} />
+                            <img src={book.url} />
                         </figure>
                         <div className="book__selected--description">
                             <h2 className="book__selected--title">
-                                {book?.title}
+                                {book.title}
                             </h2>
-                            <Rating rating={book?.rating} />
+                            <Rating rating={book.rating} />
                             <div className="book__selected--price">
-                                <Price originalPrice={book?.originalPrice} salePrice={book?.salePrice} />
+                                <Price originalPrice={book.originalPrice} salePrice={book.salePrice} />
                             </div>
                             <div className="book__summary">
                                 <h3 className="book__summary--title">
@@ -46,7 +46,7 @@ export default function BookInfo({ books, addToCart }) {
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, quis aspernatur ipsa quisquam veniam debitis doloribus autem saepe deleniti omnis dolorum neque quasi id consequatur sed adipisci! Commodi, iure ea!
                                 </p>
                             </div>
-                            <button className="btn" onClick={addToCart(book)}>
+                            <button className="btn" onClick={() => addToCart(book)}>
                                 Add to Cart
                             </button>
                         </div>
