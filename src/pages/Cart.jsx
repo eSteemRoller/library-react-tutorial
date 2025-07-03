@@ -1,6 +1,25 @@
-import React from "react";
+
 
 export default function Cart({ cart, changeQuantity }) {
+
+    const subTotal = () => {
+        let itemTotal = 0;
+        cart.forEach((book) => {
+            itemTotal += +(
+                (book.salePrice ?? book.originalPrice) * book.quantity
+            );
+        });
+        return itemTotal.toFixed(2);
+    };
+
+    const taxCalc = () => {
+        
+    }
+    
+    const cartTotal = () => {
+        
+    }
+
   return (
     <div id="books__body">
       <main id="books__main">
@@ -29,12 +48,20 @@ export default function Cart({ cart, changeQuantity }) {
                             <span className="cart__book--title">
                                 {book.title}
                             </span>
-                            <span className="cart__book--price">
-                                {book.salePrice != null || book.originalPrice != null
-                                    ? `$${((book.salePrice ?? book.originalPrice).toFixed(2))}`
-                                    : 'N/A'
-                                }
-                            </span>
+                            <div className="cart__book--prices">
+                                <span className="book__price--normal">
+                                    {book.salePrice != null 
+                                        ? ` $${((book.originalPrice).toFixed(2))}`
+                                        : null
+                                    }
+                                </span>
+                                <span className="cart__book--price">
+                                    {book.salePrice != null || book.originalPrice != null
+                                        ? ` $${((book.salePrice ?? book.originalPrice).toFixed(2))}`
+                                        : 'Price unavailable'
+                                    }
+                                </span>
+                            </div>
                             <button className="cart__book--remove">Remove</button>
                         </div>
                       </div>
@@ -50,10 +77,10 @@ export default function Cart({ cart, changeQuantity }) {
                             }
                         />
                       </div>
-                      <div className="cart__total">
+                      <div className="cart__item--total">
                         $
                         {(
-                            (book.salePrice || book.originalPrice) * book.quantity
+                            (book.salePrice ?? book.originalPrice) * book.quantity
                         ).toFixed(2)}
                       </div>
                     </div>
@@ -64,13 +91,13 @@ export default function Cart({ cart, changeQuantity }) {
             <div className="total">
               <div className="total__item total__sub-total">
                 <span>Sub-total:</span>
-                <span></span>
+                <span>${subTotal()}</span>
               </div>
               <div className="total__item total__tax">
                 <span>Tax:</span>
                 <span></span>
               </div>
-              <div className="total__item total__price">
+              <div className="total__item total__amount">
                 <span>Total:</span>
                 <span></span>
               </div>

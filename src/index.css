@@ -678,7 +678,7 @@ select {
   align-items: center;
 }
 
-.cart__total {
+.cart__item--total {
   width: 100%;
   max-width: 100px;
   display: flex;
@@ -711,7 +711,7 @@ select {
   margin-bottom: 16px;
 }
 
-.cart__book--price {
+.cart__book--prices {
   margin-bottom: 16px;
 }
 
@@ -747,7 +747,7 @@ select {
   padding-top: 24px;
 }
 
-.total__price {
+.total__amount {
   font-weight: bold;
 }
 

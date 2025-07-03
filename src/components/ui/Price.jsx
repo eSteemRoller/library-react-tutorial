@@ -19,7 +19,7 @@ export default function Price({ originalPrice, salePrice }) {
         </>
       ) : (
         <>
-          {hasValidOriginal ? `$${originalPrice.toFixed(2)}` : 'Price Unavailable'}
+          {hasValidOriginal ? `$${originalPrice.toFixed(2)}` : 'Price unavailable'}
         </>
       )}
     </div>
