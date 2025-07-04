@@ -35,6 +35,11 @@ export default function App() {
     }
   }
 
+  function removeFromCart(bookToRemove) {
+    setCart(
+      cart.filter((book) => book.id !== bookToRemove.id));
+  }
+
   function changeQuantity(book, quantity) {
     setCart(
       cart.map(item => 
@@ -70,7 +75,17 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<Books books={books} />} />
             <Route path="/books/:id" element={<BookInfo books={books} addToCart={addToCart} />} />
-            <Route path="/cart" element={<Cart books={books} cart={cart} changeQuantity={changeQuantity}/>} />
+            <Route 
+              path="/cart" 
+                element={
+                  <Cart 
+                    books={books} 
+                    cart={cart} 
+                    changeQuantity={changeQuantity} 
+                    removeFromCart={removeFromCart} 
+                  />
+                } 
+            />
           </Routes>
           <Footer />
       </div>

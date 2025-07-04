@@ -633,6 +633,28 @@ select {
   margin-bottom: 16px;
 }
 
+.book__cart--buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 104px;
+}
+
+.fading-btn {
+  transition: opacity 0.3s ease;
+}
+
+/* Optional fade-in effect for Go to Cart button */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .book__price {
   font-size: 16px;
   margin: 8px 0 24px 0;
@@ -690,6 +712,7 @@ select {
 .cart__input {
   padding: 8px;
   width: 60px;
+  margin-left: 32px;
 }
 
 .cart__book--img {

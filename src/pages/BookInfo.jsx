@@ -1,15 +1,24 @@
 
-import { Link, useParams } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import Rating from '../components/ui/Rating'
-import Price from '../components/ui/Price'
-import Book from '../components/ui/Book'
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import Rating from '../components/ui/Rating';
+import Price from '../components/ui/Price';
+import Book from '../components/ui/Book';
+import { useState } from 'react';
 
 
 export default function BookInfo({ books, addToCart }) {
     const { id } = useParams();
     const book = books.find(book => +book.id === +id);
+    const navigate = useNavigate();
+    const [addedToCart, setAddedToCart] = useState(false);
+
+    const handleAddToCart = () => {
+        addToCart(book);
+        setAddedToCart(true);
+    };
+
   return (
     <div id="books__body">
         <main id="books__main">
@@ -46,9 +55,16 @@ export default function BookInfo({ books, addToCart }) {
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, quis aspernatur ipsa quisquam veniam debitis doloribus autem saepe deleniti omnis dolorum neque quasi id consequatur sed adipisci! Commodi, iure ea!
                                 </p>
                             </div>
-                            <button className="btn" onClick={() => addToCart(book)}>
-                                Add to Cart
-                            </button>
+                            <div className="book__cart--buttons">
+                                <button className="btn" onClick={handleAddToCart}>
+                                    Add to Cart
+                                </button>
+                                {addedToCart && (
+                                    <button className="btn fading-btn fade-in" onClick={() => navigate('/cart')}>
+                                    Go to Cart
+                                    </button>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>

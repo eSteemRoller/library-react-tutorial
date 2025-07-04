@@ -1,6 +1,6 @@
 
 
-export default function Cart({ cart, changeQuantity }) {
+export default function Cart({ cart, changeQuantity, removeFromCart }) {
 
     const subTotal = () => {
         let itemTotal = 0;
@@ -13,11 +13,14 @@ export default function Cart({ cart, changeQuantity }) {
     };
 
     const taxCalc = () => {
-        
+        let salesTaxRate = .1;
+        const fullSubtotal = parseFloat(subTotal());
+        return (fullSubtotal * salesTaxRate).toFixed(2);
     }
     
     const cartTotal = () => {
-        
+        const fullTotal = parseFloat(subTotal()) + parseFloat(taxCalc());
+        return fullTotal.toFixed(2);
     }
 
   return (
@@ -62,7 +65,15 @@ export default function Cart({ cart, changeQuantity }) {
                                     }
                                 </span>
                             </div>
-                            <button className="cart__book--remove">Remove</button>
+                            <button 
+                                className="cart__book--remove" 
+                                onClick={() => {
+                                    removeFromCart(book)
+                                    }
+                                }
+                            >
+                                Remove
+                            </button>
                         </div>
                       </div>
                       <div className="cart__quantity">
@@ -95,11 +106,11 @@ export default function Cart({ cart, changeQuantity }) {
               </div>
               <div className="total__item total__tax">
                 <span>Tax:</span>
-                <span></span>
+                <span>${taxCalc()}</span>
               </div>
               <div className="total__item total__amount">
                 <span>Total:</span>
-                <span></span>
+                <span>${cartTotal()}</span>
               </div>
               <button className="btn btn__checkout no-cursor">
                 Proceed to Checkout
