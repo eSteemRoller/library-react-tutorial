@@ -7,7 +7,6 @@ import { books } from './data';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BookInfo from './pages/BookInfo';
 import Cart from './pages/Cart';
-// import { cart } from '.pages/Cart';
 import { useState } from 'react';
 
 
@@ -40,6 +39,14 @@ export default function App() {
       cart.filter((book) => book.id !== bookToRemove.id));
   }
 
+  function totalCartItems() {
+    let counter = 0;
+    cart.forEach(item => {
+      counter += item.quantity
+    });
+    return counter;
+  }
+
   function changeQuantity(book, quantity) {
     setCart(
       cart.map(item => 
@@ -70,11 +77,11 @@ export default function App() {
   return (
     <Router>
       <div className="App">
-          <Nav />
+          <Nav totalCartItems={totalCartItems()} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<Books books={books} />} />
-            <Route path="/books/:id" element={<BookInfo books={books} addToCart={addToCart} />} />
+            <Route path="/books/:id" element={<BookInfo books={books} cart={cart} addToCart={addToCart} />} />
             <Route 
               path="/cart" 
                 element={

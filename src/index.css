@@ -636,7 +636,12 @@ select {
 .book__cart--buttons {
   display: flex;
   justify-content: space-between;
-  gap: 104px;
+  gap: 144px;
+}
+
+.btn:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
 }
 
 .fading-btn {
@@ -848,6 +853,22 @@ select {
 
   .highlight:not(:last-child) {
     margin-bottom: 24px;
+  }
+
+  .cart__quantity {
+    width: 60%;
+  }
+
+  .cart__header {
+    font-size: 16px;
+  }
+
+  .cart__book--title {
+    font-size: 16px;
+  }
+
+  .cart__item--total {
+    font-size: 16px;
   }
 
   .cart__book--img {

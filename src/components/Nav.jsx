@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function Nav() {
+export default function Nav({ totalCartItems }) {
     function openMenu() {
         document.body.classList += " menu--open";
     }
@@ -28,7 +28,7 @@ export default function Nav() {
                 </li>
                 <li className="nav__list">
                     <Link to="/books" className="nav__link">
-                        Books
+                        All Books
                     </Link>
                 </li>
                 <button className="btn__menu" onClick={openMenu}>
@@ -38,7 +38,9 @@ export default function Nav() {
                     <Link to="/cart" className="nav__link">
                         <FontAwesomeIcon icon={faShoppingCart} />
                     </Link>
-                    <span className="cart__length">2</span>
+                    {
+                        totalCartItems > 0 && <span className="cart__length">{totalCartItems}</span>
+                    }
                 </li>
             </ul>
             <div className="menu__backdrop">

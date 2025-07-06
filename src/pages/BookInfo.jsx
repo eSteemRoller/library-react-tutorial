@@ -5,18 +5,19 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Rating from '../components/ui/Rating';
 import Price from '../components/ui/Price';
 import Book from '../components/ui/Book';
-import { useState } from 'react';
+// import Cart from '../pages/Cart';
+// import { useState } from 'react';
 
 
-export default function BookInfo({ books, addToCart }) {
+export default function BookInfo({ books, cart, addToCart }) {
     const { id } = useParams();
     const book = books.find(book => +book.id === +id);
     const navigate = useNavigate();
-    const [addedToCart, setAddedToCart] = useState(false);
+    // const [addedToCart, setAddedToCart] = useState(false);
+    const isInCart = (cart ?? []).some(cartItem => +cartItem.id === +id);
 
     const handleAddToCart = () => {
         addToCart(book);
-        setAddedToCart(true);
     };
 
   return (
@@ -56,10 +57,14 @@ export default function BookInfo({ books, addToCart }) {
                                 </p>
                             </div>
                             <div className="book__cart--buttons">
-                                <button className="btn" onClick={handleAddToCart}>
-                                    Add to Cart
+                                <button 
+                                    className="btn" 
+                                    onClick={handleAddToCart} 
+                                    disabled={isInCart}
+                                >
+                                    {isInCart ? 'In Cart' : 'Add to Cart'}
                                 </button>
-                                {addedToCart && (
+                                {isInCart && (
                                     <button className="btn fading-btn fade-in" onClick={() => navigate('/cart')}>
                                     Go to Cart
                                     </button>

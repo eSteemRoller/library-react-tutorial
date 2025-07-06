@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+import EmptyCart from '../assets/empty_cart.svg';
 
 export default function Cart({ cart, changeQuantity, removeFromCart }) {
 
@@ -98,24 +100,35 @@ export default function Cart({ cart, changeQuantity, removeFromCart }) {
                   );
                 })}
               </div>
+              {cart.length === 0 && (
+                <div className="cart__empty">
+                    <img src={EmptyCart} alt="" className="cart__empty--img" />
+                    <h2>Your cart is empty!</h2>
+                    <Link to="/books">
+                        <button className="btn">Browse All Books</button>
+                    </Link>
+                </div>
+                )}
             </div>
-            <div className="total">
-              <div className="total__item total__sub-total">
-                <span>Sub-total:</span>
-                <span>${subTotal()}</span>
-              </div>
-              <div className="total__item total__tax">
-                <span>Tax:</span>
-                <span>${taxCalc()}</span>
-              </div>
-              <div className="total__item total__amount">
-                <span>Total:</span>
-                <span>${cartTotal()}</span>
-              </div>
-              <button className="btn btn__checkout no-cursor">
-                Proceed to Checkout
-              </button>
-            </div>
+            {cart.length !== 0 && (
+                <div className="total">
+                    <div className="total__item total__sub-total">
+                        <span>Sub-total:</span>
+                        <span>${subTotal()}</span>
+                    </div>
+                    <div className="total__item total__tax">
+                        <span>Tax:</span>
+                        <span>${taxCalc()}</span>
+                    </div>
+                    <div className="total__item total__amount">
+                        <span>Total:</span>
+                        <span>${cartTotal()}</span>
+                    </div>
+                    <button className="btn btn__checkout no-cursor">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            )}
           </div>
         </div>
       </main>
