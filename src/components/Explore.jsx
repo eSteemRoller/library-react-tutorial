@@ -11,7 +11,7 @@ export default function Explore() {
                     Explore More <span className="purple">Books</span>
                 </h2>
                 <Link to="/books" className="href">
-                    <button className='btn'>Explore All Books</button>
+                    <button className='btn'>All Books</button>
                 </Link>
             </div>
         </div>

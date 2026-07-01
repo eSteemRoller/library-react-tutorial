@@ -1,4 +1,3 @@
-
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -20,6 +19,7 @@ export default function BookInfo({ books, cart, addToCart }) {
         addToCart(book);
     };
 
+
   return (
     <div id="books__body">
         <main id="books__main">
@@ -35,7 +35,7 @@ export default function BookInfo({ books, cart, addToCart }) {
                     </div>
                     <div className="book__selected">
                         <figure className="book__selected--figure">
-                            <img src={book.url} />
+                            <img src={book.url} alt="book cover" />
                         </figure>
                         <div className="book__selected--description">
                             <h2 className="book__selected--title">
