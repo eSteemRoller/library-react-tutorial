@@ -82,6 +82,14 @@ export const books = [
     rating: 5,
   },
   {
+    id: 10,
+    title: "The 5 Second Rule",
+    url: "https://m.media-amazon.com/images/I/91wOERyhh7L._UF1000,1000_QL80_.jpg",
+    originalPrice: 40.95,
+    salePrice: null,
+    rating: 5,
+  },
+  {
     id: 11,
     title: "How to Win Friends & Influence People",
     url: "https://m.media-amazon.com/images/I/71vK0WVQ4rL._AC_UF1000,1000_QL80_.jpg",
