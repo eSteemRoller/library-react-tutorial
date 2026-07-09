@@ -74,6 +74,14 @@ export const books = [
     rating: 4.5,
   },
   {
+    id: 9,
+    title: "48 Laws of Power Summary",
+    url: "https://m.media-amazon.com/images/I/611X8GI7hpL._AC_UF1000,1000_QL80_.jpg",
+    originalPrice: 35.95,
+    salePrice: 19.99,
+    rating: 4.5,
+  },
+  {
     id: 10,
     title: "The 5 Second Rule",
     url: "https://m.media-amazon.com/images/I/91wOERyhh7L._UF1000,1000_QL80_.jpg",
