@@ -50,6 +50,14 @@ export const books = [
     rating: 5,
   },
   {
+    id: 6,
+    title: "Sell Or Be Sold",
+    url: "https://m.media-amazon.com/images/I/616OvChM3RL._AC_UF1000,1000_QL80_.jpg",
+    originalPrice: 70.95,
+    salePrice: 12.99,
+    rating: 5,
+  },
+  {
     id: 7,
     title: "Rich Dad Poor Dad",
     url: "https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg",
