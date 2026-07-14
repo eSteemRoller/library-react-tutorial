@@ -42,6 +42,14 @@ export const books = [
     rating: 5,
   },
   {
+    id: 5,
+    title: "The 10X Rule",
+    url: "https://m.media-amazon.com/images/I/71hjq42hvGL._AC_UF1000,1000_QL80_.jpg",
+    originalPrice: 32.95,
+    salePrice: null,
+    rating: 5,
+  },
+  {
     id: 6,
     title: "Sell Or Be Sold",
     url: "https://m.media-amazon.com/images/I/616OvChM3RL._AC_UF1000,1000_QL80_.jpg",
