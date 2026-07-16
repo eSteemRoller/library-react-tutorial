@@ -34,6 +34,14 @@ export const books = [
     rating: 4.5,
   },
   {
+    id: 4,
+    title: "Deep Work",
+    url: "https://m.media-amazon.com/images/I/91nujEwIpYL._AC_UF1000,1000_QL80_.jpg",
+    originalPrice: 44.95,
+    salePrice: 19.99,
+    rating: 4.5,
+  },
+  {
     id: 5,
     title: "The 10X Rule",
     url: "https://m.media-amazon.com/images/I/71hjq42hvGL._AC_UF1000,1000_QL80_.jpg",
