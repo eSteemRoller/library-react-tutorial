@@ -18,6 +18,14 @@ export const books = [
     rating: 5,
   },
   {
+    id: 2,
+    title: "Atomic Habits",
+    url: "https://m.media-amazon.com/images/I/81ANaVZk5LL._AC_UF1000,1000_QL80_.jpg",
+    originalPrice: 39.95,
+    salePrice: null,
+    rating: 5,
+  },
+  {
     id: 3,
     title: "Can't Hurt Me",
     url: "https://m.media-amazon.com/images/I/81gTRv2HXrL._AC_UF1000,1000_QL80_.jpg",
