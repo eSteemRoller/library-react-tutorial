@@ -184,5 +184,13 @@ export const books = [
     originalPrice: 30.95,
     salePrice: 9.99,
     rating: 4.5,
+  },
+  {
+    id: 12,
+    title: "Mastery",
+    url: "https://m.media-amazon.com/images/I/51V3121nmkL._AC_UF1000,1000_QL80_.jpg",
+    originalPrice: 30.95,
+    salePrice: 9.99,
+    rating: 4.5,
   }
 ];
