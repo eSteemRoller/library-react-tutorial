@@ -106,6 +106,14 @@ export const books = [
     rating: 4,
   },
   {
+    id: 7,
+    title: "Rich Dad Poor Dad",
+    url: "https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg",
+    originalPrice: 11.95,
+    salePrice: 9.99,
+    rating: 4,
+  },
+  {
     id: 8,
     title: "Cashflow Quadrant",
     url: "https://m.media-amazon.com/images/I/71+SWQ6xj1L._AC_UF1000,1000_QL80_.jpg",
