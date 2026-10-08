@@ -144,7 +144,7 @@ export const books = [
     originalPrice: 30.95,
     salePrice: 9.99,
     rating: 4.5,
-  }
+  },
   {
     id: 12,
     title: "Mastery",
